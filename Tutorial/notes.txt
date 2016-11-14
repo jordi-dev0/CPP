@@ -23,3 +23,13 @@ a storage class defines the scope (visibility) and life-time of variables and/or
  a call by reference copies the reference of agrument in the formal parameter. I nside the function the reference is used to accs the actual arguments used in the call this means that changes made to the parameter affect the passed argument.
 an arrat name is a constant pointer to the first element of the array.
  C++ does not allow one to pass an entire array as argument to a function. However you can pass a  pointer to an array be specifying the arrayś name without an index. the array three ways to do this: --1-- void Foo(int* param){}, ---2--- void Foo(int param[10]){}, ---3--- void Foo(int param[]){}
+
+C++ provides two types of string representations: ---1--- C Style character string , ---2--- the string class type introduced with standard C++
+there are several standard functions for C++ style string: strcpy(s1,s2): copies s1 into s2, strcat: concatonates two string, strlen: return the length of a string, strchr(s1,ch) returns a pointer to the first occurance of charactr ch in string s1, strstr(s1,s2): returns a pointer to the first occurence of the string s2 in string s1.
+
+----POINTERS----
+
+it is always good practice to assign the NULL pointer to a variable in case you do not have an exact adress to be assigned.
+DEREFERENCING A NULL POINTER CAUSES A SEGMENTATION FAULT!
+there are four operators that can be applied on pointers: ++, --, + and -
+ sometimes it may be preferable to use a pointer instead of an array since a pointer can be incremented
