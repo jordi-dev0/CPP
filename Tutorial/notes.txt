@@ -33,3 +33,11 @@ it is always good practice to assign the NULL pointer to a variable in case you 
 DEREFERENCING A NULL POINTER CAUSES A SEGMENTATION FAULT!
 there are four operators that can be applied on pointers: ++, --, + and -
  sometimes it may be preferable to use a pointer instead of an array since a pointer can be incremented
+a pointer that points to the beginning of an array  can acces that array by using either pointer arithetic or array style indexing
+in general it is not allowed to modify the pointer value of an array variable
+apparantly you define a pointer to a pointer by:   <<datatype>> ** var. This feels strange to me, but whatever.
+
+a reference variable is an alias (i.e. another name for an existing variable). Once a reference is initialized with a variable, either the variable name or the reference name may be user to refer to the variable
+references are often confused with pointer but there are three major differences: ---1-- you cannot have NULL references, ---2--- once a reference is initialized to an object it canoot be changed to refer to another object, ---3--- a reference must be initialized when it is created
+note to accesd date and time related functions and structures you need to include <ctime> in the header file. There are four time related types: clock_t, time_t, size_t and tm.
+
