@@ -41,3 +41,8 @@ a reference variable is an alias (i.e. another name for an existing variable). O
 references are often confused with pointer but there are three major differences: ---1-- you cannot have NULL references, ---2--- once a reference is initialized to an object it canoot be changed to refer to another object, ---3--- a reference must be initialized when it is created
 note to accesd date and time related functions and structures you need to include <ctime> in the header file. There are four time related types: clock_t, time_t, size_t and tm.
 
+
+ structure definition is like so: struct [structure tag] { member definitions...} [one or more structure variables]
+initializing a struct variable may be done in the following way: struct <<struct_name>> <<variable_name>>
+ alternatively a struct can be defined: typedef struct{ <<members>>}<<struct_type_name>>
+a struct variable is then instantiated like this: <<struct_type_name>> <<variable_name>>
