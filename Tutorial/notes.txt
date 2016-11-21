@@ -46,3 +46,7 @@ note to accesd date and time related functions and structures you need to includ
 initializing a struct variable may be done in the following way: struct <<struct_name>> <<variable_name>>
  alternatively a struct can be defined: typedef struct{ <<members>>}<<struct_type_name>>
 a struct variable is then instantiated like this: <<struct_type_name>> <<variable_name>>
+
+Inheritance
+
+There are three modifiers for class access: --1-- public, any can modify, ---2--- private, only through instantions (get's and set's) of this class can the attribute be accessed, ---3--- private, the member can  only be access through instances from this class or classes which inherit from it
