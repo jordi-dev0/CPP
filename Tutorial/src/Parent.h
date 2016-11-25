@@ -2,6 +2,7 @@
 #include <string>
 #endif
 */
+#include <string>
 class Parent{
 	public:
 	std::string name;
@@ -14,3 +15,4 @@ class Parent{
 	private:
 	double length;
 };
+Parent::Parent():name("Nils"),age(100),length(2.0){};
