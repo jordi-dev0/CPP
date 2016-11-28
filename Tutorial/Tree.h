@@ -22,7 +22,7 @@ class Tree{
 			std::cout<<pt->name<<" is larger than "<<this->name<<std::endl;
 		}
 	};
-	private:
+	protected:
 		std::string name;
 		double Height;
 };
