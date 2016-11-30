@@ -1,1 +1,5 @@
 symbols that can not be overloaded are <<::>>, <<.*>>, <<.>> and <<?:>>
+
+Polymorphism
+The owrd polymorphism, means having many forms. Typically polymorphism occurs when there is a hierarchy of classes and they are related by inheritance
+When different classes with a function of the same name and even arguments, an opportunit exists to use polymorphism
