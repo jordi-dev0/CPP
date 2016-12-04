@@ -1,5 +1,62 @@
+static typing is when type checking is performed on compile time as opposed to run-time
+four pillars of object oriented developement: encalpsulation, data hhiding, inheritance, polymorphism
+the standardc++  consists of three parts: 1. the ocre language including variables data types and literals, 2 the standard library giving a richt set of functions manipulating files string etc, 3 the standard template library (STL) giving a rich set of maethods manipulating data structures etc.
+keywords in c++: asm, auto, bool, break, case, catch, char, class, const, const_cast, continue, default, delete, do, double, dynamic_cast, else, enum explicit, extern, false, float, for, friend , goto, if ,inline, int, long, mutable, namespace, new , operator, private, protected, public, register, reinterpret_cast, return, short, signed, sizeof, static, static_cast, struct, switch, template, this, throw, true, try, typedef, typeid, typename, union, unisnged, using, virtual, void, volatile, wchar_t, while
+trigraphs are three-charactes sequences that represent a single characted and the sequence alwats starts with two question marks: ??=  #, ??/ \, ??' ^, ??( [, ??) ], ??!  |, ??< {, ??> }, ??-  ~
+primitive built- in Types:  Boolean bool, Character char, Integer int, floating point  float, double floating point double, Valueless void, wide character wchar_t
+several of the basic types van be modified using one or more of these type modifiers: signed, unsigned, short, long
+ there are two kinds of experssions in C++: lvalue =  expressions that refer to a memory location. an lvalue may epear as either the left-hand or right hand side of an assignment. rvalue =  refers to a data value that is stored at some address in memory. an rvalue is an epxression that cannot have a value assigned to which means an rvalue may appear on the right but not left hand side of an assigment. Variables are lvaues ans so may appear on the left hand side of an assignment. Numeric literals are rvalues and so may not be assigned and can not appear on the left hand side.
+ a scope is a region  of the program and boradly speaking there are three places where variables can be declared: 1. inside a function or block which is called local variables, 2. in the definition of function parameters which is called formal parameters, 3 outside of all functions which is called global variables.
+local variables have to be initialized within its scope, a global variable is alwatys initialized as zero (or type equivalent)
+ constants, also called literals, can be of any baisc datat type and can be divided into integer, numerals, floating point numerals, characters, string and boolean values
+ integer literals -- can be decimal, octal or hexadecimal. A prefix specifies the base or 'radix': 0x or oX for hexadecimal, 0 for octal, and nothing for decimal. An integer literal can also have a suffic that is a comibnation of U and L, for unsigned and long, respecitively, The suffix can be uppercase or lowercase and can be in any order.
+boolean literals -- false is for false, and true is for true, defined as standard keywords. 
+Character literals -- are enclosed in single quotes, and comply to to C printf stuff
+String literals -- are enclosed by the double quotes and are similar to characters literals.
+be careful using const keyword. It has an advantage compared to preprocessor define since it will be typed checked at compile time. However it may become complicated. for example 'const int* A' declare that A is variable pointer to a constant integer. 'int const * A' is an alternative which does the same. While 'int * const B' declared that C is constant pointer to a variable integer. And ' int const * const C'  declares that C is a constant pointer to a constant integer. Basically the 'const' applies to whatever is on its immediate left (other than if there is nothing there in which case it appies to whatever is its immediate right).
+datatype modfiers are : signed, unsigned, long and short. The modifiers unsigned, short and long can be used without a datatype then integer is implied.
+type qualifiers in C++: ---const, objects of type const cannot be changed by your program during execution, ---- volatile tells the compiler that a variable value mey be changed in wats not explicitly specified by the program, -- restrict a pointer is intially the only means by which the boject it points to can be accessed. Only C99 add a new type qualifier called restrict.
+a storage class defines the scope (visibility) and life-time of variables and/or functions within a C++ program. These specifiers precede the type that they modify. These storage classes can be used in C++: --- auto, the default storage class for local variables, --- register, is used to define local variables that should be stored in a register instead of RAM. This means that the variable has a maximum size equal to the register size and cant have the unary '&' operator applied to it (as it does not have a memory location. The register should only be used for bariables that require quick acces such as counter. It should also be noted that defining register does not mean that the variable will be stored in a register. It means that it MIGHT be stored in a register depending on hardware and implementation restriction. ---- static, instruct the compiler to keep a local variable in existence during hte life-time of the program instead of creating and destroying it each time it come into and hoes out of scope. Therfore, making variables static allows them to maintain their values between function calls. The status modifier may also be applied to global variables. When this is done it causes that variables scope to be resitricted to the file  in which it is eclard. In C++ when static is uded on a class data member, it causes only the one copy of that member to be shared by all objects of its class.
+--- extern, is uded to give a reference of global variable that is visible to ALL the program files. When you use 'extern'the bariable connot be initialized as all it does is point the variable name at a storage location that has been previously defined. When you have multiple files and you define a global variable or function which will be used in other files also, ther extern will be used in another file to give reference of variable or function. Just for understanding 'extern'is used to declare a global variable or funciton in another file.
+
+--- mutable, allows a member of an object to override the const keyword. That is, a mutable member can be modified by a const member function
+ a call by reference copies the reference of agrument in the formal parameter. I nside the function the reference is used to accs the actual arguments used in the call this means that changes made to the parameter affect the passed argument.
+an arrat name is a constant pointer to the first element of the array.
+ C++ does not allow one to pass an entire array as argument to a function. However you can pass a  pointer to an array be specifying the arrayś name without an index. the array three ways to do this: --1-- void Foo(int* param){}, ---2--- void Foo(int param[10]){}, ---3--- void Foo(int param[]){}
+
+C++ provides two types of string representations: ---1--- C Style character string , ---2--- the string class type introduced with standard C++
+there are several standard functions for C++ style string: strcpy(s1,s2): copies s1 into s2, strcat: concatonates two string, strlen: return the length of a string, strchr(s1,ch) returns a pointer to the first occurance of charactr ch in string s1, strstr(s1,s2): returns a pointer to the first occurence of the string s2 in string s1.
+
+----POINTERS----
+
+it is always good practice to assign the NULL pointer to a variable in case you do not have an exact adress to be assigned.
+DEREFERENCING A NULL POINTER CAUSES A SEGMENTATION FAULT!
+there are four operators that can be applied on pointers: ++, --, + and -
+ sometimes it may be preferable to use a pointer instead of an array since a pointer can be incremented
+a pointer that points to the beginning of an array  can acces that array by using either pointer arithetic or array style indexing
+in general it is not allowed to modify the pointer value of an array variable
+apparantly you define a pointer to a pointer by:   <<datatype>> ** var. This feels strange to me, but whatever.
+
+a reference variable is an alias (i.e. another name for an existing variable). Once a reference is initialized with a variable, either the variable name or the reference name may be user to refer to the variable
+references are often confused with pointer but there are three major differences: ---1-- you cannot have NULL references, ---2--- once a reference is initialized to an object it canoot be changed to refer to another object, ---3--- a reference must be initialized when it is created
+note to accesd date and time related functions and structures you need to include <ctime> in the header file. There are four time related types: clock_t, time_t, size_t and tm.
+
+
+ structure definition is like so: struct [structure tag] { member definitions...} [one or more structure variables]
+initializing a struct variable may be done in the following way: struct <<struct_name>> <<variable_name>>
+ alternatively a struct can be defined: typedef struct{ <<members>>}<<struct_type_name>>
+a struct variable is then instantiated like this: <<struct_type_name>> <<variable_name>>
+
+Inheritance
+
+There are three modifiers for class access: --1-- public, any can modify, ---2--- private, only through instantions (get's and set's) of this class can the attribute be accessed, ---3--- private, the member can  only be access through instances from this class or classes which inherit from it
+
+the copy constructor is a constructor which creates an object by initializing it with an boject of the same class which has been created previously. The copy constructor is used to: ---1--- initialize one object from another of the samte type, ---2--- Copy an object to pass it as an argument to a function, ---3--- copy an boject to return it from a function
+the syntax to declare a copy constructor is: <<classname>> (const <<classname>> &obj){};
+
 symbols that can not be overloaded are <<::>>, <<.*>>, <<.>> and <<?:>>
 
 Polymorphism
 The owrd polymorphism, means having many forms. Typically polymorphism occurs when there is a hierarchy of classes and they are related by inheritance
 When different classes with a function of the same name and even arguments, an opportunit exists to use polymorphism
+
