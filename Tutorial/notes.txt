@@ -60,3 +60,7 @@ Polymorphism
 The owrd polymorphism, means having many forms. Typically polymorphism occurs when there is a hierarchy of classes and they are related by inheritance
 When different classes with a function of the same name and even arguments, an opportunit exists to use polymorphism
 
+Seperating the implementation and interface, creates an abstraction of the functionality. The outside world can talk through the interface while the implementation can be updated at will, as long as it fully supports the interface. The usage of classes and access labels (i.e. public/protected/private ) help creating the abstractoin layer. Major benefits of the abstration are: --1-- Class internals are protected from user level errors, --2-- class implementation may change.
+
+An interface describes the behaviour or capabilities of a C++ class without committing to a particular implementation of that class
+An abstract in C++ is described as a class with at least one pure virtual function
