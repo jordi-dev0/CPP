@@ -64,3 +64,8 @@ Seperating the implementation and interface, creates an abstraction of the funct
 
 An interface describes the behaviour or capabilities of a C++ class without committing to a particular implementation of that class
 An abstract in C++ is described as a class with at least one pure virtual function
+
+Templates
+ the genereic syntax for a template is: template <class type> return_type function_name(arguments){ <<<body of code >>> }
+ in general templates are used to make functionality generic for all datatypes
+note that classes can be made from templates with the following syntax: template <class_type> class class_name {...}
