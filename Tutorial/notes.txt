@@ -69,3 +69,7 @@ Templates
  the genereic syntax for a template is: template <class type> return_type function_name(arguments){ <<<body of code >>> }
  in general templates are used to make functionality generic for all datatypes
 note that classes can be made from templates with the following syntax: template <class_type> class class_name {...}
+
+ signal handling
+event froms the Operating System can be caught with the use of signals, which may be used when including the <csignal> header. There are six signals which can be caught: --1-- SIGABRT, signal abort,--2-- SIGFPE error in arithmetic, --3-- SIGILL illegal instruction, --4-- SIGINT reception of interactive attention signal, --5-- SIGSEGV, invalid acces to storage, --6-- SIGTERM terminatio request sent to the program
+to call the OS the raise() function can be used
