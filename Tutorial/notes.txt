@@ -73,3 +73,7 @@ note that classes can be made from templates with the following syntax: template
  signal handling
 event froms the Operating System can be caught with the use of signals, which may be used when including the <csignal> header. There are six signals which can be caught: --1-- SIGABRT, signal abort,--2-- SIGFPE error in arithmetic, --3-- SIGILL illegal instruction, --4-- SIGINT reception of interactive attention signal, --5-- SIGSEGV, invalid acces to storage, --6-- SIGTERM terminatio request sent to the program
 to call the OS the raise() function can be used
+
+MULTI THREADING
+
+Multi threading is a specialized form of multitasking. There are two types of multitasking: --1-- process base: concurrent execution of programs, --2-- thread based: concurent execution of pieces of the same program
