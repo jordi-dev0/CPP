@@ -1,0 +1,28 @@
+OBJS = MovieList.o Movie.o NameList.o Name.o Iterator.o
+CC = g++
+DEBUG = -g
+CFLAGS = -Wall -c $(DEBUG)
+LFLAGS = -Wall $(DEBUG)
+
+p1 : $(OBJS)
+	$(CC) $(LFLAGS) $(OBJS) -o p1
+
+MovieList.o : MovieList.h MovieList.cpp Movie.h NameList.h Name.h Iterator.h
+	$(CC) $(CFLAGS) MovieList.cpp
+
+Movie.o : Movie.h Movie.cpp NameList.h Name.h
+	$(CC) $(CFLAGS) MovieList.cpp
+
+NameList.o : NameList.h NameList.cpp Name.h
+	$(CC) $(CFLAGS) MovieList.cpp
+
+Name.o : Name.h Name.cpp
+	$(CC) $(CFLAGS) MovieList.cpp
+
+Iterator.o : Iterator.h Iterator.cpp MovieList.h
+	$(CC) $(CFLAGS) MovieList.cpp
+
+clean:
+	\rm *.o *~ p1
+
+	
