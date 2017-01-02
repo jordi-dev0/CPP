@@ -77,3 +77,6 @@ to call the OS the raise() function can be used
 MULTI THREADING
 
 Multi threading is a specialized form of multitasking. There are two types of multitasking: --1-- process base: concurrent execution of programs, --2-- thread based: concurent execution of pieces of the same program
+
+Waiting on thread completions before continuing, can be done by the join routine, pthread_join()
+in fact this is a way to synchronize threads, since it blocks the execution of the caller
