@@ -82,3 +82,8 @@ Waiting on thread completions before continuing, can be done by the join routine
 in fact this is a way to synchronize threads, since it blocks the execution of the caller
 
 Common gateway interface
+
+END TUTORIAL
+
+post mortem:
+---You don't have to know every detail of the C++ language to write a good C++ progam---
