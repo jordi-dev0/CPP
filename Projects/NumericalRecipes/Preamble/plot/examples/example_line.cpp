@@ -3,7 +3,7 @@
 int main(){
     string file = "tmp.eps";
     PsPage p(file);
-    p.DrawLine(0.0,0.0,25.0,25.0);
+    p.DrawLine(0.0,0.0,25.1,25.1);
     return 0;
 
 }

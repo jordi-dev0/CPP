@@ -54,10 +54,13 @@ div,
 */ 
 // define datatypes
 struct Color{
-    int R;
-    int G;
-    int B;
+    float R;
+    float G;
+    float B;
 };
+
+// constants
+static const Color BLACK = {0.0,0.0,0.0};
 
 // Name space
 using namespace std;
@@ -117,6 +120,15 @@ class EpsHeader{
 	p<<"\%\%Page: 1 1\n";
 	return true;
     } 
+    void UpdateBoundingBoxHorz(float x){
+	m_BoundingBox[0] = min(m_BoundingBox[0],(int)x);
+	m_BoundingBox[2] = max(m_BoundingBox[2],(int)x);
+    }
+    
+    void UpdateBoundingBoxVert(float y){
+	m_BoundingBox[1] = min(m_BoundingBox[1],(int)y);
+	m_BoundingBox[3] = max(m_BoundingBox[3],(int)y);
+    }
 
 };
 
@@ -187,13 +199,20 @@ class PsPage{
 	    m_LineWidth = Width;
 	    m_FileStream << Width <<" setlinewidth\n";
 	}
-	void DrawLine(float Xstart,float  Ystart,float  Xend, float Yend)
+	void DrawLine(	    float Xstart, float Ystart,
+			    float  Xend, float Yend,
+			    Color C = BLACK)
 	{
-	  //  m_FileStream.open(m_FileName,fstream::app);
+	    m_Head.UpdateBoundingBoxHorz(Xstart);
+	    m_Head.UpdateBoundingBoxHorz(Xend);
+	    m_Head.UpdateBoundingBoxVert(Ystart);
+	    m_Head.UpdateBoundingBoxVert(Yend);
 	    m_Data.push_back("gsave \n");
 	    m_Data.push_back("newpath \n");
 	    m_Data.push_back(to_string(Xstart)+" "+to_string(Ystart)+" moveto\n");
 	    m_Data.push_back(to_string(Xend)+" "+to_string(Yend)+" lineto \n"); 
+	    m_Data.push_back(to_string(C.R)+" "+to_string(C.G)+" ");
+	    m_Data.push_back(to_string(C.B)+" setrgbcolor\n");
 	    m_Data.push_back("stroke\n"); 
 	    m_Data.push_back("grestore\n"); 
 	} 
