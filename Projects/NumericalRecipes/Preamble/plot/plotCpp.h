@@ -215,5 +215,20 @@ class PsPage{
 	    m_Data.push_back(to_string(C.B)+" setrgbcolor\n");
 	    m_Data.push_back("stroke\n"); 
 	    m_Data.push_back("grestore\n"); 
-	} 
+	}
+	void DrawCircle(float x, float y, float r, Color C = BLACK){
+
+	    m_Head.UpdateBoundingBoxHorz(x-r);
+	    m_Head.UpdateBoundingBoxHorz(x+r);
+	    m_Head.UpdateBoundingBoxVert(y-r);
+	    m_Head.UpdateBoundingBoxVert(y+r);
+	    m_Data.push_back("gsave\n");
+	    m_Data.push_back("newpath\n");
+	    m_Data.push_back(to_string(x)+" "+to_string(y)+" ");
+	    m_Data.push_back(to_string(r)+" 0 360 arc\n");
+	    m_Data.push_back(to_string(C.R)+" "+to_string(C.G)+" ");
+	    m_Data.push_back(to_string(C.B)+" setrgbcolor\n");
+	    m_Data.push_back("stroke\n");
+	    m_Data.push_back("grestore\n");
+	}
 }; 
